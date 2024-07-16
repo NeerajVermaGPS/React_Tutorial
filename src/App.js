@@ -1,30 +1,36 @@
 import './App.css';
 import React from 'react';
-// import ClickClass from './components/ClickClass';
-// import UserGreeting from './components/UserGreeting';
-// import NameList from './components/NameList';
-// import Styling from './components/Styling';
-// import PersonObj from './components/PersonObj';
-// import ClickFunc from './components/ClickFunc';
-// import Greet from "./components/Greet" //there are two methods to import, any name (when export in Greet is Greet), {Greet}(for name exports)
-// import Welcome from './components/Welcome';
+// import Form from './components/Form';
 // import Hello from './components/Hello';
+// import RefTut from './components/RefTut';
+// import Styling from './components/Styling';
+// import Welcome from './components/Welcome';
 // import Message from './components/Message';
 // import Counter from './components/Counter';
-// import ClickCounter from './components/ClickCounter';
-// import HoverCounter from './components/HoverCounter';
-// import DestructProp from './components/DestructProp';
-// import DestructPropClass from './components/DestructPropClass';
-// import Form from './components/Form';
+// import NameList from './components/NameList';
+// import PortalsD from './components/PortalsD';
+// import ClickFunc from './components/ClickFunc';
+// import PersonObj from './components/PersonObj';
+// import CompA from './components/Contexts/CompA';
+// import CompD from './components/Contexts/CompD';
+// import { UserProvider } from './components/Contexts/UserContext';
+// import ClickClass from './components/ClickClass';
 // import LifecycleA from './components/LifecycleA';
 // import ParentComp from './components/ParentComp';
 // import FRParentRef from './components/FRParentRef';
-// import RefTut from './components/RefTut';
-// import PortalsD from './components/PortalsD';
+// import UserGreeting from './components/UserGreeting';
+// import ClickCounter from './components/ClickCounter';
+// import HoverCounter from './components/HoverCounter';
+// import DestructProp from './components/DestructProp';
 // import ErrorBoundary from './components/ErrorBoundary';
 // import ErrorHandling from './components/ErrorHandling';
+// import ReCounter from './components/RenderProps/Counter';
+// import ReClickCounter from './components/RenderProps/ClickCounter';
+// import ReHoverCounter from './components/RenderProps/HoverCounter';
+// import DestructPropClass from './components/DestructPropClass';
 // import "./components/files/Style.css"
 // import styles from "./components/files/Style.module.css"
+// import Greet from "./components/Greet" //there are two methods to import, any name (when export in Greet is Greet), {Greet}(for name exports)
 
 class App extends React.Component {
   // Used for Modal implementation with PortalsD.js
@@ -75,8 +81,20 @@ class App extends React.Component {
         <ErrorHandling heroName="Madam"/> 
         <Counter sec={10}></Counter>
         </ErrorBoundary>
-        <ClickCounter />
-        <HoverCounter /> */}
+        <ClickCounter name="Madam"/>
+        <HoverCounter />
+        <ReCounter render={(count, incrementCount) => {
+            return <ReClickCounter count={count} incrementCount={incrementCount}/>
+        }}/>
+        <ReCounter render={(count, incrementCount) => {
+            return <ReHoverCounter count={count} incrementCount={incrementCount}/>
+        }} />
+        <UserProvider value="Madam">
+          <CompA />
+        </UserProvider>
+        <UserProvider value="Unknown">
+          <CompD />
+        </UserProvider> */}
       </div>
     );
   }

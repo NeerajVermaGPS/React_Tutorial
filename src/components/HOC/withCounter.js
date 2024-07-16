@@ -1,8 +1,8 @@
 import React from 'react'
 
 // Work as Higher Order Component for Counters of same type
-const UpdatedCounter = (OriginalCounter) => {
-    class NewCounter extends React.Component {
+const withCounter = (WrappedComponent) => {
+    class WithCounter extends React.Component {
         constructor(props) {
           super(props)
         
@@ -19,10 +19,10 @@ const UpdatedCounter = (OriginalCounter) => {
         }
 
         render() {
-            return <OriginalCounter incrCount={this.incrementCount} count={this.state.count} />
+            return <WrappedComponent incrCount={this.incrementCount} count={this.state.count} {...this.props}/>
         }
     }
-    return NewCounter
+    return WithCounter
 }
 
-export default UpdatedCounter
+export default withCounter

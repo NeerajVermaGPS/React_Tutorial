@@ -1,5 +1,5 @@
 import React from 'react'
-import UpdatedCounter from './HOC/withCounter'
+import withCounter from './HOC/withCounter'
 
 // Make use of HOC withCounter
 function HoverCounter(props) {
@@ -10,4 +10,4 @@ function HoverCounter(props) {
   )
 }
 
-export default UpdatedCounter(HoverCounter)
+export default withCounter(HoverCounter)
