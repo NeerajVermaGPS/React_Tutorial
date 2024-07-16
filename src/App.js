@@ -11,6 +11,8 @@ import React from 'react';
 // import Hello from './components/Hello';
 // import Message from './components/Message';
 // import Counter from './components/Counter';
+// import ClickCounter from './components/ClickCounter';
+// import HoverCounter from './components/HoverCounter';
 // import DestructProp from './components/DestructProp';
 // import DestructPropClass from './components/DestructPropClass';
 // import Form from './components/Form';
@@ -52,7 +54,6 @@ class App extends React.Component {
         <Welcome name="Madam"/>
         <Welcome name="Radha">This is again secret.</Welcome>
         <Hello />
-        <Counter sec={10}></Counter>
         <Message/>
         <DestructProp name="Madam" newName="Rooh">It works by breaking the props into its components</DestructProp>        
         <DestructPropClass name="Madam" newName="Rooh">It works by breaking the props into its components</DestructPropClass>
@@ -70,9 +71,12 @@ class App extends React.Component {
         <button onClick={this.handleModal}>Open Modal</button>
         {this.state.isModalOpen ? <PortalsD><button onClick={this.handleModal}>Close Modal</button></PortalsD> : ""}
         <ErrorBoundary>
-          <ErrorHandling heroName="Batman"/> // Change batman with joker to see the error handling
-          <ErrorHandling heroName="Madam"/> 
-        </ErrorBoundary> */}
+        <ErrorHandling heroName="Batman"/> // Change batman with joker to see the error handling
+        <ErrorHandling heroName="Madam"/> 
+        <Counter sec={10}></Counter>
+        </ErrorBoundary>
+        <ClickCounter />
+        <HoverCounter /> */}
       </div>
     );
   }

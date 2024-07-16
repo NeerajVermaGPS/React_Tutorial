@@ -10,11 +10,11 @@ export default class Counter extends Component {
         }
     }
     
-    decrementCount(){
+    decrementCount = () => {
         if(this.state.count > 1){
-            this.setState({
+            this.setState(prevState => {
                 // eslint-disable-next-line react/no-direct-mutation-state
-                count: --(this.state.count)
+                return {count: prevState.count - 1}
             }, ()=> {
                 console.log(this.state.count)
             })
