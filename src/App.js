@@ -24,6 +24,8 @@ import React from 'react';
 // import DestructProp from './components/DestructProp';
 // import ErrorBoundary from './components/ErrorBoundary';
 // import ErrorHandling from './components/ErrorHandling';
+// import PostList from './components/HTTPSRqsts/PostList';
+// import CreatePost from './components/HTTPSRqsts/CreatePost';
 // import ReCounter from './components/RenderProps/Counter';
 // import ReClickCounter from './components/RenderProps/ClickCounter';
 // import ReHoverCounter from './components/RenderProps/HoverCounter';
@@ -94,7 +96,9 @@ class App extends React.Component {
         </UserProvider>
         <UserProvider value="Unknown">
           <CompD />
-        </UserProvider> */}
+        </UserProvider>
+        <PostList/>
+        <CreatePost /> */}
       </div>
     );
   }
