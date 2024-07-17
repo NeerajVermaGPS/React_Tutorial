@@ -1,4 +1,5 @@
 import './App.css';
+import HooksApp from './HooksApp';
 import React from 'react';
 // import Form from './components/Form';
 // import Hello from './components/Hello';
@@ -54,6 +55,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <HooksApp />
         {/* <h1 className={styles.success}>Success Class from Module CSS: Not inherited in child components</h1>
         <h1 className='error'>Error Class from Direct CSS: Inherited in child components</h1>
         <Greet name="Madam"/>
