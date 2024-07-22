@@ -6,9 +6,9 @@ class CreatePost extends Component {
     super(props)
 
     this.state = {
-        uid: 0,
-        title: "Post Title Here",
-        post: "Post Here"
+        userId: 0,
+        postTitle: "Post Title Here",
+        postBody: "Post Here"
     }
 
     // this.handlePost = this.handlePost.bind(this)
@@ -61,15 +61,15 @@ class CreatePost extends Component {
       <form onSubmit={this.handleForm}>
         <div>
             <label htmlFor="userId">Enter User Id:</label>
-            <input type="text" name="userId" id="userId" value={this.state.uid} onChange={this.handleInputs}/>
+            <input type="text" name="userId" id="userId" value={this.state.userId} onChange={this.handleInputs}/>
         </div>
         <div>
             <label htmlFor="postTitle">Enter Title:</label>
-            <input type="text" name="postTitle" id="postTitle" value={this.state.title} onChange={this.handleInputs}/>
+            <input type="text" name="postTitle" id="postTitle" value={this.state.postTitle} onChange={this.handleInputs}/>
         </div>
         <div>
             <label htmlFor="postBody">Enter Post:</label>
-            <textarea name="postBody" id="postBody" value={this.state.post} onChange={this.handleInputs}></textarea>
+            <textarea name="postBody" id="postBody" value={this.state.postBody} onChange={this.handleInputs}></textarea>
         </div>
         <button type="submit">Submit</button>
       </form>
